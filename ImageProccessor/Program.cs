@@ -7,7 +7,8 @@ using Microsoft.EntityFrameworkCore;
 var builder = Host.CreateDefaultBuilder(args)
     .ConfigureServices((hostContext, services) =>
     {
-        services.AddDbContext<PhotoContext>(con => con.UseSqlServer(hostContext.Configuration["ConnectionString"])
+        Console.WriteLine(hostContext.Configuration["ConnectionString1"]);
+        services.AddDbContext<PhotoContext>(con => con.UseSqlServer(hostContext.Configuration["ConnectionString1"])
                        .LogTo(Console.Write, LogLevel.Error)
            .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
@@ -33,7 +34,6 @@ var builder = Host.CreateDefaultBuilder(args)
 
         services.AddHostedService<MassTransitHostedService>();
 
-        services.AddHostedService<Worker>();
     });
 
 var host = builder.Build();

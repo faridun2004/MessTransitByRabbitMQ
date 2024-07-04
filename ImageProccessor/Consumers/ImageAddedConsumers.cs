@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Threading.Tasks;
-using ImageProccessor.Infrastructure;
+﻿using ImageProccessor.Infrastructure;
 using ImageProccessor.Models;
 using MassTransit;
 using MessagesTransit;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 public class ImageAddedConsumers : IConsumer<ImageAdded>
 {
@@ -36,7 +32,7 @@ public class ImageAddedConsumers : IConsumer<ImageAdded>
 
         // Process original image
         _logger.LogInformation($"Processing photo: {photo.ImageUrl}");
-        await Task.Delay(10000); // Simulating image processing time
+        await Task.Delay(1000); // Simulating image processing time
         photo.Proccesung = true;
 
         // Save changes

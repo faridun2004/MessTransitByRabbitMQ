@@ -29,6 +29,7 @@ namespace AddPhotoService.Controllers
             var photo = new Image
             {
                 //Id = 1,
+                Name="Photo",
                 Size=  "20 x 30",
                 ImageUrl = Path.Combine("uploads", file.FileName),
                 Proccesung = false

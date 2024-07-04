@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ImageProccessor.Migrations
 {
     [DbContext(typeof(PhotoContext))]
-    [Migration("20240704041034_CreateDb")]
+    [Migration("20240704063052_CreateDb")]
     partial class CreateDb
     {
         /// <inheritdoc />
